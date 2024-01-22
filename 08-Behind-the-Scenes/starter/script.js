@@ -80,6 +80,21 @@ const jessica2 = {
 const jessicaCopy = Object.assign({}, jessica2);
 jessicaCopy.lastName = 'Davis';
 
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
+
+const jessica3 = {
+  firstName: 'Jessica',
+  lastName: 'Thach',
+  age: 23,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
 
 jessicaCopy.family.push('Mary');
 jessicaCopy.family.push('John');
