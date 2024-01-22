@@ -33,6 +33,7 @@ const firstName = 'Jonas';
 calcAge(1991);
 */
 
+/*
 let age = 30;
 let oldAge = age;
 age = 31;
@@ -48,3 +49,40 @@ const friend = me;
 friend.age = 27;
 console.log('Friend: ', friend);
 console.log('Me', me);
+*/
+
+let lastName = 'Thach';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Thach',
+  age: 23,
+};
+
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
+
+// marriedJessica = {};
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Thach',
+  age: 23,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
