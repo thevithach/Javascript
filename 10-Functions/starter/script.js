@@ -60,7 +60,7 @@ const newPassport = function (person) {
 newPassport(thevi);
 checkIn(flight, thevi);
 */
-
+/*
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -95,11 +95,40 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['Thevi', 'Martha', 'Adam'].forEach(high5);
-
+*/
 // Functions returning functions
-
+/*
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
   };
 };
+
+const greeterHey = greet('Hey');
+greeterHey('Thevi');
+greeterHey('Steven');
+
+greet('Hello')('Thevi');
+
+// Challenge
+const greetArr = greeting => name => aids =>
+  console.log(`${greeting} ${name} ${aids}`);
+
+greetArr('Hi')('Thevi')('Steven');
+*/
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+// Closure
+const booker = secureBooking();
+booker();
+booker();
+booker();
+
+console.dir(booker);
