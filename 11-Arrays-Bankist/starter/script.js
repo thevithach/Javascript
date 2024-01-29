@@ -74,3 +74,153 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+/*
+let arr = ['a', 'b', 'c', 'd', 'e'];
+// SLICE
+console.log(arr.slice(2)); // ['c', 'd', 'e']
+console.log(arr.slice(2, 4)); // ['c', 'd']
+console.log(arr.slice(-2)); // ['d', 'e']
+console.log(arr.slice(-1)); // ['e']
+console.log(arr.slice(1, -2)); // ['b', 'c']
+console.log(arr.slice()); // ['a', 'b', 'c', 'd', 'e']
+console.log([...arr]); // ['a', 'b', 'c', 'd', 'e']
+
+// SPLICE
+// console.log(arr.splice(2)); // ['c', 'd', 'e']
+arr.splice(-1); // ['a', 'b', 'c', 'd']
+console.log(arr); // ['a', 'b', 'c', 'd']
+arr.splice(1, 2); // ['a', 'd']
+console.log(arr); // ['a', 'd']
+
+// REVERSE
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse());
+console.log(arr2); // ['f', 'g', 'h', 'i', 'j']
+
+// CONCAT
+const letters = arr.concat(arr2);
+console.log(letters); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+console.log([...arr, ...arr2]); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+// JOIN
+console.log(letters.join(' - ')); // a - b - c - d - e - f - g - h - i - j
+*/
+
+// for (const movement of movements) {
+// for (const [
+//   i /* Index */,
+//   movement /* Current array element */,
+// ] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+//   }
+// }
+
+/*
+console.log('---- FOREACH ----');
+
+movements.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
+
+console.log('---- FOREACH WITH INDEX ----');
+
+// movements.forEach(function (
+//   movement /* current element */
+//   index /* Index */,
+//   array
+// ) {
+//   if (movement > 0) {
+//     console.log(`Movement ${index + 1}: You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
+//   }
+// });
+// // When to use forEach vs for of loop
+// // Fundamental difference, can't break out of a forEach loop
+// // Can use continue and break in for of loop
+// // Can't use continue and break in forEach loop
+// // If you need to break out of loop use for of loop, otherwise it's preference
+// */
+
+// const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+// console.log(movements);
+// console.log(movementsUSD);
+
+// const movementsUSDfor = [];
+// for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+// console.log(movementsUSDfor);
+
+// const movementsUSDarrow = movements.map(mov => mov * eurToUsd);
+
+// console.log(movementsUSDarrow);
+
+// const movementsDescriptions = movements.map(
+//   (mov, i) =>
+//     ` Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+//       mov
+//     )}`
+// );
+
+// console.log(movementsDescriptions);
+
+// const deposits = movements.filter(function (mov) {
+//   return mov > 0;
+// });
+// console.log(movements);
+// const depositsArr = movements.filter(mov => mov > 0);
+// console.log(deposits);
+// console.log(depositsArr);
+
+// const depositsFor = [];
+// for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+// console.log(depositsFor);
+
+// const withdrawals = movements.filter(mov => mov < 0);
+// console.log(withdrawals);
+
+// console.log(movements);
+
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur;
+// }, 0);
+
+// const balanceArrow = movements.reduce((acc, cur) => acc + cur, 0);
+
+// console.log(balanceArrow);
+
+// console.log(balance);
+
+// let balance2 = 0;
+// for (const mov of movements) balance2 += mov;
+// console.log(balance2);
+
+// // Maximum value
+// const max = movements.reduce((acc, mov, i) => {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   if (acc > mov) return acc;
+//   else return mov;
+// }, movements[0]);
+
+// console.log(max);
+
+// const min = movements.reduce((acc, mov, i) => {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   if (acc < mov) return acc;
+//   else return mov;
+// }, movements[0]);
+
+// console.log(min);
