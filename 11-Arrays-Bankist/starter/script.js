@@ -224,3 +224,16 @@ console.log('---- FOREACH WITH INDEX ----');
 // }, movements[0]);
 
 // console.log(min);
+
+// PIPELINE
+const eurToUsd = 1.1;
+const totalDepositsUSD = movements
+  .filter(mov => mov < 0)
+  .map((mov, i, arr) => {
+    // console.log(arr);
+    console.log(`Iteration ${i}: ${mov}`);
+    return mov + eurToUsd;
+  })
+  //.map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);
